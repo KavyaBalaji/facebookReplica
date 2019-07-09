@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <title>facebook</title>
+  <link rel="shortcut icon" href="images/logo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="./js/fb.js"></script>
+  <script src="./js/common.js"></script>  
+  <script src="./js/profile.js"></script>
+  <script src="./js/editProfile.js"></script>
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <title>Facebook</title>
+</head>
+<body onload="getAllUsers()">
+    <div class="container-fluid" style="background:#3b5998;padding: 20px;
+position: relative;
+top: -20px;">
+        <img src="images/facebook.png" style="margin: auto;
+        display: block;
+        height: 45px;"/>
+    </div>
+<div class="col-md-offset-4 col-md-4 col-md-offset-4 col-xs-offset-1 col-xs-10 
+ col-xs-offset-1 col-sm-offset-2 col-sm-8 col-sm-offset-2" id="loginFullPage">
+        <form>
+            <h4 style="text-align:center;">Login to facebook</h4>
+            <div class="form-group">
+                <label for="email">Email or phone </label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email or phonenumber" name="email" style="    border-radius: 0px;">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" style="    border-radius: 0px;">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" id="submitBtn" onClick = "getUserDetails()">Submit</button>
+            </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>facebook</title>
+  <link rel="shortcut icon" href="images/logo.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="./js/fb.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/editProfile.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="./css/style.css" />
+  <title>Facebook</title>
+</head>
+
+<body onload="getUData()">
+  ​<div class="container-fluid index_header" id="profilePage">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="col-md-1 col-sm-2 col-xs-2">
+        <img src="images/fb.png" alt="facbook logo" class="profileFbImg">
+      </div>
+      <div class="col-md-8 col-sm-8 col-xs-10">
+        <div class="form-group" style="margin-bottom: 0px;">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" id="inputGroup" />
+            <span class="input-group-addon">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12 col-sm-6">
+      <div class="media col-sm-6 col-xs-6 col-md-3">
+        <div class="media-left">
+          <img src="images/img_avatar.png" class="media-object img">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading whiteColor" id="loginUserName"></h4>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-6 col-md-9">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="profile.html">Home</a></li>
+                <li><a href="editProfile.html">Create</a></li>
+                <li><a href="activityLog.html">Activity Log</a></li>
+                <li><a href="index.html" onclick="logout()">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-----------------------MAIN CONTENT----------------------------->
+  <div class="container-fluid">
+    <div class="col-md-12 col-sm-6 col-xs-12" id="profileContainer">
+      <div class="col-md-10">
+
+        <img src="images/cover.jpg" alt="" id="profileCover">
+        <div class="col-md-3 profilePic">
+          <div class="ratio img-responsive img-circle" style="background-image: url(images/flower.jpg);">
+          </div>
+        </div>
+        <div class="col-md-7 activityLogUpdateInfo">
+          <button class="profile_btn">Update Info</button>
+          <button class="profile_btn"><i class="fa fa-list" aria-hidden="true">
+            </i>&nbsp;&nbsp;Activity Log <button class="profile_btn" style="border-left: 1px solid #ccc;">
+              <i class="material-icons" style="font-size: 14px;">&#xe5d3;</i>
+            </button></button>
+        </div>
+        <div class="col-md-12" id="timeLContent">
+          <nav class="navbar ">
+            <div class="navbar-header">
+              <a class="navbar-brand whiteColor" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav" style="    padding: 10px;
+                                  margin-left: 20%;">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Timeline
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Page 1-1</a></li>
+                  <li><a href="#">Page 1-2</a></li>
+                  <li><a href="#">Page 1-3</a></li>
+                </ul>
+              </li>
+              <li class="active"><a href="#">Friends</a></li>
+              <li class="active"><a href="#">Photos</a></li>
+              <li class="active"><a href="#">Archive</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Page 1-1</a></li>
+                  <li><a href="#">Page 1-2</a></li>
+                  <li><a href="#">Page 1-3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+        <div class="col-md-12 content">
+          <div class="col-md-4">
+            <div class="col-md-12 div_text" style=" margin-right:50px;"><img src="images/star.png" alt="" class="star">
+              5 items for you to review<i class="fa fa-times" aria-hidden="true" style="float:right;
+                                    padding: 8px;"></i></div>
+            <div class="col-md-12 div_text marT10" style=" margin-right:50px;">
+              <img src="images/earth.png" alt="" style="width:30px;">Intro<br>
+              <p style="text-align: center;" id="userName"></p>
+              <span style="float:right;margin-top:-9%;font-size:20px;"><a href="editProfile.html"><i class = "fa fa-edit" aria-hidden = "true"></i></span></a>
+              <hr>
+              <p id="userCurrJobOrg"></p>
+              <p id="userColl"></p>
+              <p id="userSchool"></p>
+              <p id="userCurrCity"></p>
+              <p id="userBcity"></p>
+            </div>
+            <div class="col-md-12 div_text marT10" style=" margin-right:50px;">
+
+              <div class="media-left">
+                <img src="images/friends.png" class="media-object img" style="width:20px;">
+              </div>
+              <div class="media-body">
+                <p>Find Friends</p>
+              </div>
+              <hr>
+              <table>
+                <thead>
+                  <tr>
+                    <td class="td_div"><img src="images/men.jpg" alt=""></td>
+                    <td class="td_div"> <img src="images/women.jpg" alt=""></td>
+                    <td class="td_div"><img src="images/men1.jpg" alt=""></td>
+                  </tr>
+                  <tr>
+                    <td class="td_div"><img src="images/men.jpg" alt=""></td>
+                    <td class="td_div"> <img src="images/women1.jpg" alt=""></td>
+                    <td class="td_div"><img src="images/men1.jpg" alt=""></td>
+                  </tr>
+                  <tr>
+                    <td class="td_div"><img src="images/men.jpg" alt=""></td>
+                    <td class="td_div"> <img src="images/women.jpg" alt=""></td>
+                    <td class="td_div"><img src="images/men.jpg" alt=""></td>
+                  </tr>
+                </thead>
+
+              </table>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="col-md-12 div_text" style="background-color: #f5f6f7;">
+              <table>
+                <thead>
+                  <tr>
+                    <th><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Create Post</th>
+                    <th><i class="fa fa-camera" aria-hidden="true"></i>&nbsp;Photo/video</th>
+                    <th><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp;Live video</th>
+                    <td><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;Life Event</td>
+                  </tr>
+                </thead>
+
+              </table>
+            </div>
+            <div class="col-md-12 div_text">
+              <div class="media-left">
+                <img src="images/img_avatar.png" class="media-object img " style="width:30px !important;">
+              </div>
+              <div class="media-body" id="timeLineHeader"></div>
+              <hr>
+              <div>
+                <button class="btn_style">
+                  <img src="images/gallery.png" alt="" class="timeLineHeader">
+                  Photo/video</button>
+                <button class="btn_style">
+                  <img src="images/tag.png" alt="" class="timeLineHeader">
+                  Tag Friends</button>
+                <button class="btn_style">
+                  <img src="images/smile.png" alt="" class="timeLineHeader">
+                  Feeling</button>
+              </div>
+            </div>
+
+            <div class="col-md-12 div_text marT10">
+              <div class="media-left">
+                <img src="images/img_avatar.png" class="media-object img width30">
+              </div>
+              <div class="media-body" id="timeline1UName"></div>
+              <hr>
+
+              <div>
+                <img src="images/img1.jpeg" width="540" height="240">
+              </div>
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <td class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;Like</td>
+                      <td class="like"><i class="fa fa-comment-o" aria-hidden="true"></i>&nbsp;Comment</td>
+                      <td class="like"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Share</td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-12 div_text marT10">
+              <div class="media-left">
+                <img src="images/img_avatar.png" class="media-object img width30">
+              </div>
+              <div class="media-body" id="timeline2UName"></div>
+              <hr>
+              <div>
+                <img src="images/img2.jpg" width="540" height="240">
+              </div>
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <td class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;Like</td>
+                      <td class="like"><i class="fa fa-comment-o" aria-hidden="true"></i>&nbsp;Comment</td>
+                      <td class="like"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Share</td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+</body>
+
+</html>
